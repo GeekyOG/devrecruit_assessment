@@ -152,7 +152,7 @@
  *       500:
  *         description: Some server error
  *
- * /api/book/isbn:
+ * /api/book?isbn={ISBN}:
  *   get:
  *     summary: get book by isbn
  *     tags: [Books]
@@ -161,6 +161,7 @@
  *         name: ISBN
  *         schema:
  *           type: integer
+ *
  *
  *
  *

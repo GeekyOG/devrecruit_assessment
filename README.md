@@ -20,41 +20,41 @@ All endpoints are listed below
 
 ## Register user
 
-http://localhost:8080/register
+http://localhost:8080/api/register
 
 ## Login user 
 
-http://localhost:8080/login
+http://localhost:8080/api/login
 
 ## Get book details by ISBN
 
 
-http://localhost:8080/book?isbn={ISBN}
+http://localhost:8080/api/book?isbn={ISBN}
 
 
 ### The following endpoints require authentication using jwt provided in the authorization header ###
 
 ## Post a book
 
- http://localhost:8080/book
+ http://localhost:8080/api/book
 
 ## Get all books
 
-http://localhost:8080/books
+http://localhost:8080/api/books
 
 
 ## Get a single book 
 
-http://localhost:8080/book/:id
+http://localhost:8080/api/book/:id
 
 ## Update a book 
 
-http://localhost:8080/book:id
+http://localhost:8080/api/book:id
 
 
 ## Delete a book 
 
-http://localhost:8080/book:id
+http://localhost:8080/api/book:id
 
 
 
