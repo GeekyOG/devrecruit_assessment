@@ -30,7 +30,7 @@ class Book {
 
   async findAll(req, res) {
     const page = parseInt(req.query.page);
-    const limit = parseInt(req.query.limit);
+    const limit = parseInt(req.query.offset);
     const startIndex = (page - 1) * limit;
     const endIndex = page * limit;
 
@@ -58,7 +58,7 @@ class Book {
       }
 
       result.books = rows.slice(startIndex, endIndex);
-      if (req.query.page || req.query.offset) {
+      if (req.query.page && req.query.offset) {
         res.json(result);
       } else {
         res.json(rows);
@@ -87,13 +87,13 @@ class Book {
   }
 
   async update(req, res) {
-    const { title, author, isbn, publication_date } = req.body;
+    const { title, author, isbn, publicationDate } = req.body;
     const bookId = req.params.id;
     const userId = req.user.userId;
     try {
       const query =
         "UPDATE books SET title = $1, author = $2, isbn = $3, publication_date = $4 WHERE id = $5 AND userId = $6 RETURNING *";
-      const values = [title, author, isbn, publication_date, bookId, userId];
+      const values = [title, author, isbn, publicationDate, bookId, userId];
       const { rows } = await pool.query(query, values);
       if (!rows.length)
         return res.status(404).json({ message: "Book not found" });

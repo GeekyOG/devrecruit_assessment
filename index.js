@@ -161,6 +161,9 @@
  *         name: ISBN
  *         schema:
  *           type: integer
+ *     responses:
+ *        200:
+ *          description: Successful response
  *
  *
  *
@@ -353,7 +356,7 @@ app.get("/api/book/:id", authenticateUser, async (req, res) => {
 });
 
 // Update a book
-app.put("/api/book/:id", async (req, res) => {
+app.put("/api/book/:id", authenticateUser, async (req, res) => {
   const books = new Book();
   books.update(req, res);
 });
