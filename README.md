@@ -5,7 +5,7 @@ Run
 
 to create a docker container with postgresQl database and get Node 14 installed.
 
-## After initial run a restart of the Node container might be required to create necessary tables
+## After the docker compose up is run visit http://localhost:8080/setup to set up the necessary tables
 
 
 This will get your programme started on localhost port 8080.

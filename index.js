@@ -260,8 +260,6 @@ const swaggerui = require("swagger-ui-express");
 const app = express();
 const PORT = process.env.PORT || 8080;
 
-createTables();
-
 app.use(express.json());
 
 async function fetchBookDetailsByISBN(isbn) {
@@ -275,6 +273,10 @@ async function fetchBookDetailsByISBN(isbn) {
     return error.message;
   }
 }
+
+app.get("/setup", (req, res) => {
+  createTables(res);
+});
 
 // register user
 app.post(
