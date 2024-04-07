@@ -256,12 +256,14 @@ const axios = require("axios");
 const { body, validationResult } = require("express-validator");
 const swaggerjsdoc = require("swagger-jsdoc");
 const swaggerui = require("swagger-ui-express");
-
+const cors = require("cors");
 const app = express();
-const PORT = process.env.PORT || 8080;
+
+app.use(cors());
+
+const PORT = process.env.PORT || 8000;
 
 app.use(express.json());
-
 async function fetchBookDetailsByISBN(isbn) {
   try {
     const response = await axios.get(
@@ -275,6 +277,7 @@ async function fetchBookDetailsByISBN(isbn) {
 }
 
 app.get("/setup", (req, res) => {
+  console.log(0);
   createTables(res);
 });
 
