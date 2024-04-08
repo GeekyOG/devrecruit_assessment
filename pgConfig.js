@@ -1,11 +1,11 @@
 const { Pool } = require("pg");
 
 const pool = new Pool({
-  host: "srv1005.hstgr.io",
+  host: "ep-solitary-fog-a4kqgbsx-pooler.us-east-1.aws.neon.tech",
   port: 5432,
-  user: "u556650680_crypto_fleet",
-  password: "Crypto_fleet1.",
-  database: "u556650680_crypto_fleet",
+  user: "default",
+  password: "IqFlsiVUj1t9",
+  database: "verceldb",
 });
 
 module.exports = pool;

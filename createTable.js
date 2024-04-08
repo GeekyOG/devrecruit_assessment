@@ -6,16 +6,16 @@ const createTables = (res) => {
   pool
     .query(createBooksTableQuery)
     .then(() => {
-      res.status(201).send("Table created successfully");
+      console.log("Table created successfully");
     })
     .catch((error) => {
-      console.log(error, 0);
+      console.log(error, "success");
     });
   // create users table
   pool
     .query(createUserTableQuery)
     .then(() => {
-      res.status(201).send("User created successfully");
+      console.log("User created successfully");
     })
     .catch((error) => {
       console.log(error, "k");
